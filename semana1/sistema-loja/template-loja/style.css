@@ -1,0 +1,50 @@
+.icon {
+    width: 50px;
+}
+body {
+    background-color:#ff4c68;
+    color: #ffffff;
+    text-align: center;
+    
+}
+footer {
+    text-align: center;
+    background-color: #ff4c68;
+    position:absolute;
+    bottom:0;
+    width:100vw;
+}
+
+a.button {
+    
+   margin-right: 30px;
+   
+    text-decoration: none;
+    color: white;
+    
+}
+a.button:hover {
+   
+    text-decoration: none;
+    color: gray;
+    
+}
+div.init {
+    margin: 30vh;
+
+}
+
+header {
+    margin: 10vh;
+}
+
+table {
+    margin-top: 12vh;
+    margin-left: 25%;
+}
+ul, li, h3 {
+    text-align: left;
+}
+div.compra{
+    margin-top: 20px;
+}
