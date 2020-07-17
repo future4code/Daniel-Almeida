@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Funcionários</title>
+    <title>interFarma</title>
 </head>
 <header>
     <div>
@@ -15,26 +15,42 @@
         <a class="button" href="./funcionarios.html">Funcionários</a>
     </div>
     <div class="compra">
-        <a class="button" href="./comprar.html">Comprar</a>
+        <a class="button" href="./comprar.hmtl">Comprar</a>
         <a class="button" href="./histocompra.html">Histórico de compra</a>
     </div>
 
 </header>
 <body>
-    <div>
-        <p>interFarma</p>
+    <div >
+        <h1>Comprar no <em>interFarma</em>!</h1>
+        
     </div>
-    
-    
 
-    <h3>Funcionários</h3>
-    <!-- Crie uma lista de funcionários usando as tags que você aprendeu hoje abaixo \/ -->
-        <ul>
-            <li>Daniel</li>
-            <li>Marcio</li>
-            <li>João</li>
-        </ul>
-</body>
+    
+    <div>
+       <form action="#">
+        <label for="produto">Produto</label>
+        <select id="products" name="produtos">
+            <option value="anapyon">Anapyon</option>
+            <option value="biotonico">Biotônico</option>
+            <option value="nivea">Nivea</option>
+            <option value="51">51</option>
+          </select>
+          <br>
+          <label for="pagamento">Opções de Pagamento</label>
+          <select name="pay" id="pagamento">
+            <option value="dinheiro">Dinheiro</option>
+            <option value="cartao">Cartão</option>
+            
+              
+          </select>
+          <br>
+          <button type="submit">Comprar</button>
+
+
+
+    </form>
+    </div>
 <footer>
     <div>
         <p>Siga-nos nas redes sociais!</p>
@@ -46,4 +62,5 @@
         </div>
     </div>
 </footer>
+</body>
 </html>
