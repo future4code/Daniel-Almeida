@@ -1,0 +1,77 @@
+body {
+    background-color: #38405c;
+    color: white;
+    font-family: "Montserrat";
+}
+
+div.header{
+    padding-top: 2%;
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat";
+    text-align: right; 
+    margin-right: 5%
+    
+}
+#dani {
+    margin-right: 50%;
+    text-decoration: none;
+    color: white;
+}
+a{
+    padding-right: 2%;
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: grey;
+}
+#dani:hover {
+    color: grey;
+}
+
+h1{
+    font-family: "Ubuntu";
+    padding-top: 5%;
+}
+
+img{
+    height: 15rem;
+    display: block;
+    margin-left: auto;
+  
+    
+}
+#xiaomi {
+    position: fixed;
+    bottom:75px;
+    right: 10vw;
+}
+.icon {
+    margin-top: 25px;
+    width: 25px;
+    height: 25px;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    
+    background-color: #8c8385;
+    position: fixed;
+    bottom:0;
+    width:100vw;
+    font-family: "Ubuntu";
+    text-align: center;
+}
+div.foot {
+    height: 75px;
+}
+h3 {
+    font-family: "Ubuntu";
+}
+form {
+    text-align:center;
+    align:center;
+}
