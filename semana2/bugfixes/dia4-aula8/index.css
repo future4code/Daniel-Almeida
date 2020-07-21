@@ -1,0 +1,182 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+}
+
+ol {
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    text-align: center;
+}
+
+h2 {
+    background-color: #fe7e02;
+    padding: 10px 5px 10px 5px;
+    color: white;
+    text-align: center;
+}
+
+input {
+    box-sizing: border-box;
+  border: none;
+  border-bottom: 3px solid;
+  width: 400px;
+}
+
+input[type=text]:focus {
+    outline: none;
+    
+    
+  }
+
+button:focus {
+    color: white;
+}
+
+img {
+    width: 15px;
+    height: 15px;
+}
+
+div>p:first-child {
+    display: inline;
+}
+
+div img {
+    
+}
+
+.botao-amarelo {
+    margin-top: 100px;
+    background-color: #ffaf43;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+.botao-amarelo:hover {
+    background-color: #c44f00;
+}
+
+.container {
+    padding-top: 100px;
+
+    height: 500px;
+    text-align: center;
+}
+
+.icone {
+    
+}
+
+
+/** 
+  *
+  *  ESTILOS HOME 
+  *
+  **/
+
+#container-de-descricao {
+    background-color: #2274a5;
+    color: white;
+    padding-top: 100px;
+}
+
+#container-de-descricao>ol {
+    padding: 15px 0px;
+}
+
+#container-para-comprar {
+    background-color: #e7eb90;
+}
+
+#container-para-comprar>p {
+    color: #c44f00;
+    padding: 100px 0;
+    font-size: 60px;
+}
+
+
+/**
+  *
+  *  ESTILOS COMPRAR 
+  *
+  **/
+
+div:nth-child(2),
+div:last-child {
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td button {
+    background-color: #fadf63;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    color: black;
+}
+
+.container-do-search {
+    margin-top: 20px;
+    height: 100px;
+}
+
+
+#back-button {
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+    color: black;
+    margin-right: auto;
+margin-left: auto;
+    
+}
+#voltar {
+    margin-top: 300px;
+    margin-left: 45%;
+    margin-right: 55%;
+}
+
+#back-button:hover {
+    background-color: #635a3d
+}
+
+td button:hover {
+    background-color: #635a3d
+}
+
+td button:active {
+    color: white;
+}
+#lupa:hover {
+    opacity: 0.5;
+
+}
+#lupa:active {
+    opacity: 1;
+}
+
+
+#table {
+    margin-bottom: 200px;
+}
