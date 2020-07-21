@@ -50,12 +50,17 @@ body {
 .red-background {
     background-color: red;
     height: 15vh;
-    
+    display: flex;
+        justify-content: center;
+     align-items: center;
     width: 25vw;
 }
 
 .lightgreen-background {
     background-color: lightgreen;
+        display: flex;
+        justify-content: center;
+     align-items: center;
     
     height: 15vh;
     
@@ -83,12 +88,31 @@ body {
 #vertical-middle-container {
     display: flex;
     flex-direction: column;
-
-    flex-direction: 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
 
 }
 #middle-container {
     display: flex;
     flex-direction: row;
     
+}
+#reverter {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#blank {
+    display: flex;
+    justify-content: center;
+ align-items: center;
+
+height: 30vh;
+
+width: 25vw;
 }
