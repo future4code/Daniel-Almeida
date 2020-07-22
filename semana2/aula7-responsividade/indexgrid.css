@@ -3,7 +3,6 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0;
-    
 }
 
 div {
@@ -12,240 +11,97 @@ div {
 
 #first-block {
     background-color: red;
-    display: grid;
-    grid-template-rows: 10vh; 
-    
+    height: 15vh;
+    padding: 0;
+    margin: 0;
+   
 }
 
 .blue-block {
     display: grid;
-  
-        justify-content: center;
-     align-items: center;
+    align-content: center;
     background-color: blue;
-    
-    height: 30vh;
-    width: 30vw;
+    height: 15vh;
+    grid-column: 1;
+  grid-row: 1;
+  
 }
 
 .yellow-block {
     display: grid;
-        justify-content: center;
-     align-items: center;
+    align-content: center;
+    height: 15vh;
+    grid-column: 2;
+  grid-row: 1;
     background-color: yellow;
-    height: 30vh;
-    width: 30vw;
 }
 
 .green-block {
     display: grid;
-        justify-content: center;
-     align-items: center;
+    align-content: center;
+    grid-column: 3;
+  grid-row: 1;
+    height: 15vh;
     background-color: green;
-   
-    height: 30vh;
-    width: 30vw;
+}
+
+.segundo {
+    grid-row: 2;
 }
 
 .black-block {
     display: grid;
-        justify-content: center;
-     align-items: center;
+    align-content: center;
+    height: 50vh;
     background-color: black;
     color: white;
-    
-    height: 45vh;
-    width: 45.5vw;
+    margin-right: 10px;
+    grid-row: 3;
+   
 }
+#dois{
+    margin-right: 0;
+}
+
 
 .white-block {
     display: grid;
-        justify-content: center;
-     align-items: center;
-    height: 30vh;
-    width: 30vw;
-    margin: 5px 5px 5px 5px;
+    align-content: center;
     background-color: white;
+    height: 15vh;
+    grid-column: auto;
+  grid-row: 4;
 }
 
 #main-container {
     display: grid;
- 
-    justify-content: center;
-    vertical-align: middle;
-    text-align: center;
-
-}
-
-.container1{
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-justify-items: center;
-justify-content: space-between;  
-margin-top: 10px;
-margin-bottom: 10px;
-align-content: space-evenly;
-border: none;
-}
-.container2{
-    display: grid;
-    grid-template-columns: 50% 50%;
-justify-items: center;
-justify-content: space-between;  
-margin-top: 10px;
-margin-bottom: 10px;
-align-content: space-evenly;
-border: none;
-}
-
-@media screen and (max-device-width : 420px) { 
-
-    /* celulares */
-    
+  grid-gap: 20px;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  align-content: center;
+  border: none;
   
-    .blue-block {
-        display: grid;
-            justify-content: center;
-         align-items: center;
-        background-color: blue;
-        margin: 5px 5px 5px 5px;
-        height: 10vh;
-        width: 100vw;
-    }
-    
-    .yellow-block {
-        display: grid;
-            justify-content: center;
-         align-items: center;
-        background-color: yellow;
-        
-        height: 10vh;
-        width: 100vw;
-    }
-    
-    .green-block {
-        display: grid;
-            justify-content: center;
-         align-items: center;
-        background-color: green;
-        
-        height: 10vh;
-        width: 100vw;
-    }
-    
-    .black-block {
-        display: grid;
-            justify-content: center;
-         align-items: center;
-        background-color: black;
-        color: white;
-        
-        height: 10vh;
-        width: 100vw;
-    }
-    
-    .white-block {
-        display: grid;
-            justify-content: center;
-         align-items: center;
-        height: 10vh;
-        width: 100vw;
-        
-        background-color: white;
-    }
+}
 
+.black {
+    display: grid;
+    grid-gap: 10px;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    align-content: center;
+    border: none;
 
 }
-@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+
+
+@media screen and (max-device-width : 420px) {
+     /* celulares */
+
+     
+}
+@media screen  and (max-device-width : 800px) {
 /* tablets */
-#first-block {
-    background-color: red;
-    display: grid;
-    grid-template-rows: 10vh;  
-    
 }
 
-.blue-block {
-    display: grid;
-  
-        justify-content: center;
-     align-items: center;
-    background-color: blue;
-    
-    height: 30vh;
-    width: 30vw;
-}
-
-.yellow-block {
-    display: grid;
-        justify-content: center;
-     align-items: center;
-    background-color: yellow;
-    height: 30vh;
-    width: 30vw;
-}
-
-.green-block {
-    display: grid;
-        justify-content: center;
-     align-items: center;
-    background-color: green;
-   
-    height: 30vh;
-    width: 30vw;
-}
-
-.black-block {
-    display: grid;
-        justify-content: center;
-     align-items: center;
-    background-color: black;
-    color: white;
-    
-    height: 45vh;
-    width: 45.5vw;
-}
-
-.white-block {
-    display: grid;
-        justify-content: center;
-     align-items: center;
-    height: 30vh;
-    width: 30vw;
-    margin: 5px 5px 5px 5px;
-    background-color: white;
-}
-
-#main-container {
-    display: grid;
- 
-    justify-content: center;
-    vertical-align: middle;
-    text-align: center;
-
-}
-
-.container1{
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-justify-items: center;
-justify-content: space-between;  
-margin-top: 10px;
-margin-bottom: 10px;
-align-content: space-evenly;
-border: none;
-}
-.container2{
-    display: grid;
-    grid-template-columns: 50% 50%;
-justify-items: center;
-justify-content: space-between;  
-margin-top: 10px;
-margin-bottom: 10px;
-align-content: space-evenly;
-border: none;
-}
-
-
-
-}
