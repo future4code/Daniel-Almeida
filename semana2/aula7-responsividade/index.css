@@ -1,0 +1,202 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    
+}
+
+div {
+    border: 1px solid black;
+}
+
+#first-block {
+    display: flex;
+    background-color: red;
+    height: 10vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.blue-block {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    background-color: blue;
+    margin: 5px 5px 5px 5px;
+    height: 30vh;
+    width: 30vw;
+}
+
+.yellow-block {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    background-color: yellow;
+    margin: 5px 5px 5px 5px;
+    height: 30vh;
+    width: 30vw;
+}
+
+.green-block {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    background-color: green;
+    margin: 5px 5px 5px 5px;
+    height: 30vh;
+    width: 30vw;
+}
+
+.black-block {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    background-color: black;
+    color: white;
+    margin: 5px 5px 5px 5px;
+    height: 45vh;
+    width: 45.5vw;
+}
+
+.white-block {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    height: 30vh;
+    width: 30vw;
+    margin: 5px 5px 5px 5px;
+    background-color: white;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+@media screen and (max-device-width : 420px) { 
+    /* celulares */
+    .blue-block {
+        display: flex;
+            justify-content: center;
+         align-items: center;
+        background-color: blue;
+        margin: 5px 5px 5px 5px;
+        height: 10vh;
+        width: 100vw;
+    }
+    
+    .yellow-block {
+        display: flex;
+            justify-content: center;
+         align-items: center;
+        background-color: yellow;
+        margin: 5px 5px 5px 5px;
+        height: 10vh;
+        width: 100vw;
+    }
+    
+    .green-block {
+        display: flex;
+            justify-content: center;
+         align-items: center;
+        background-color: green;
+        margin: 5px 5px 5px 5px;
+        height: 10vh;
+        width: 100vw;
+    }
+    
+    .black-block {
+        display: flex;
+            justify-content: center;
+         align-items: center;
+        background-color: black;
+        color: white;
+        margin: 5px 5px 5px 5px;
+        height: 10vh;
+        width: 100vw;
+    }
+    
+    .white-block {
+        display: flex;
+            justify-content: center;
+         align-items: center;
+        height: 10vh;
+        width: 100vw;
+        margin: 5px 5px 5px 5px;
+        background-color: white;
+    }
+
+
+}
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+/* tablets */
+#ultimo {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    height: 30vh;
+    width: 93vw;
+    margin: 5px 5px 5px 5px;
+    background-color: white;
+}
+
+.blue-block {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    background-color: blue;
+    margin: 5px 5px 5px 5px;
+    height: 30vh;
+    width: 45vw;
+}
+
+.yellow-block {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    background-color: yellow;
+    margin: 5px 5px 5px 5px;
+    height: 30vh;
+    width: 45vw;
+}
+
+.green-block {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    background-color: green;
+    margin: 5px 5px 5px 5px;
+    height: 30vh;
+    width: 93vw;
+}
+
+.black-block {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    background-color: black;
+    color: white;
+    margin: 5px 5px 5px 5px;
+    height: 45vh;
+    width: 45.5vw;
+}
+
+.white-block {
+    display: flex;
+        justify-content: center;
+     align-items: center;
+    height: 30vh;
+    width: 45.5vw;
+    margin: 5px 5px 5px 5px;
+    background-color: white;
+}
+
+
+}
