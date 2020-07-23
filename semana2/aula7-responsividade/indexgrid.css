@@ -1,0 +1,107 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    border: 1px solid black;
+}
+
+#first-block {
+    background-color: red;
+    height: 15vh;
+    padding: 0;
+    margin: 0;
+   
+}
+
+.blue-block {
+    display: grid;
+    align-content: center;
+    background-color: blue;
+    height: 15vh;
+    grid-column: 1;
+  grid-row: 1;
+  
+}
+
+.yellow-block {
+    display: grid;
+    align-content: center;
+    height: 15vh;
+    grid-column: 2;
+  grid-row: 1;
+    background-color: yellow;
+}
+
+.green-block {
+    display: grid;
+    align-content: center;
+    grid-column: 3;
+  grid-row: 1;
+    height: 15vh;
+    background-color: green;
+}
+
+.segundo {
+    grid-row: 2;
+}
+
+.black-block {
+    display: grid;
+    align-content: center;
+    height: 50vh;
+    background-color: black;
+    color: white;
+    margin-right: 10px;
+    grid-row: 3;
+   
+}
+#dois{
+    margin-right: 0;
+}
+
+
+.white-block {
+    display: grid;
+    align-content: center;
+    background-color: white;
+    height: 15vh;
+    grid-column: auto;
+  grid-row: 4;
+}
+
+#main-container {
+    display: grid;
+  grid-gap: 20px;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  align-content: center;
+  border: none;
+  
+}
+
+.black {
+    display: grid;
+    grid-gap: 10px;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    align-content: center;
+    border: none;
+
+}
+
+
+@media screen and (max-device-width : 420px) {
+     /* celulares */
+
+     
+}
+@media screen  and (max-device-width : 800px) {
+/* tablets */
+}
+
