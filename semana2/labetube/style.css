@@ -53,9 +53,9 @@ section {
     
 }
 .tela {
-    height: 60vw;
-    width: 90vw;
-    
+
+    height: 60vh;
+    width: 50vw;
 }
 
 #reverse {
