@@ -16,6 +16,10 @@ console.log(typeof(nome), typeof(idade))
 nome = prompt("Qual seu nome?")
 idade = prompt("Qual sua idade")
 
+console.log(typeof(nome), typeof(idade))
+
+console.log("Olá", nome, "Vc tem", idade, "anos!")
+
 console.log(nome, idade)
 
 let perguntaUm = prompt("Qual seu endereço?")
@@ -24,7 +28,7 @@ let perguntaTres = prompt("Qual seu cpf?")
 let perguntaQuatro = prompt("Qual seu cep?")
 let perguntaCinco = prompt("Qual seu bairro?")
 
-console.log(perguntaUm, perguntaDois, perguntaTres, perguntaQuatro, perguntaCinco)
+console.log("Resposta1", perguntaUm,"Resposta2", perguntaDois, "Resposta3", perguntaTres, "Resposta4", perguntaQuatro, "Resposta5", perguntaCinco)
 
 let comida = ['arroz', 'feijão', 'carne', 'macarrão', 'maçã']
 
