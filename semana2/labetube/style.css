@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    
+    top: 0;
+    text-align: left;
+    height: 10vh;
+    align-items: center;
+    background-color: #e96805;
+    padding-left: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    
+}
+form {
+   padding-right: 10px;
+   margin-right: 10px;
+}
+
+video{
+    height: 142px;
+    width: 250px;
+    margin-bottom: 15px;
+}
+
+footer {
+    
+    padding-left: 10px;
+    display: flex;
+    width: 100%;
+    
+    bottom: 0;
+    text-align: left;
+    height: 10vh;
+    color: white;
+    background-color: black;
+    align-items: center
+    
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+.tela {
+
+    height: 60vh;
+    width: 50vw;
+}
+
+#reverse {
+    display: flex;
+flex-direction: column-reverse;
+border: none;
+text-decoration: none;
+color: black;
+margin-top: 20px;
+}
+
+a {
+display: flex;
+flex-direction: column;
+border: 1px solid black;
+margin-bottom: 20px;
+text-decoration: none;
+color: black;
+
+
+padding-bottom: 10px;
+}
+
+@media screen and (max-device-width : 800px) {
+    section {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    video{
+        height: 50vh;
+        width: 70vw;
+    }
+}
