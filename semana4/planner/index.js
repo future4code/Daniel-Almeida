@@ -17,7 +17,7 @@ function salvar() {
             const domingo = document.getElementById('terca')
             domingo.innerHTML += `<p onclick='style.textDecoration = "line-through"'>${tarefa.value}</p>`
         }
-        if (dia === "quata"){
+        if (dia === "quarta"){
             const domingo = document.getElementById('quarta')
             domingo.innerHTML += `<p onclick='style.textDecoration = "line-through"'>${tarefa.value}</p>`
         }
