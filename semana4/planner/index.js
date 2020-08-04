@@ -7,33 +7,40 @@ function salvar() {
     if (tarefa.value !== ""){
         if (dia === "domingo"){
             const domingo = document.getElementById('domingo')
-            domingo.innerHTML += `<p>${tarefa.value}</p>`
+            domingo.innerHTML += `<p onclick='style.textDecoration = "line-through"'>${tarefa.value}</p>`
         }
         if (dia === "segunda"){
             const domingo = document.getElementById('segunda')
-            domingo.innerHTML += `<p>${tarefa.value}</p>`
+            domingo.innerHTML += `<p onclick='style.textDecoration = "line-through"'>${tarefa.value}</p>`
         }
         if (dia === "terca"){
             const domingo = document.getElementById('terca')
-            domingo.innerHTML += `<p>${tarefa.value}</p>`
+            domingo.innerHTML += `<p onclick='style.textDecoration = "line-through"'>${tarefa.value}</p>`
         }
         if (dia === "quata"){
             const domingo = document.getElementById('quarta')
-            domingo.innerHTML += `<p>${tarefa.value}</p>`
+            domingo.innerHTML += `<p onclick='style.textDecoration = "line-through"'>${tarefa.value}</p>`
         }
         if (dia === "quinta"){
             const domingo = document.getElementById('quinta')
-            domingo.innerHTML += `<p>${tarefa.value}</p>`
+            domingo.innerHTML += `<p onclick='style.textDecoration = "line-through"'>${tarefa.value}</p>`
         }
         if (dia === "sexta"){
             const domingo = document.getElementById('sexta')
-            domingo.innerHTML += `<p>${tarefa.value}</p>`
+            domingo.innerHTML += `<p onclick='style.textDecoration = "line-through"'>${tarefa.value}</p>`
         }
         if (dia === "sabado"){
             const domingo = document.getElementById('sabado')
-            domingo.innerHTML += `<p>${tarefa.value}</p>`
+            domingo.innerHTML += `<p onclick='style.textDecoration = "line-through"'>${tarefa.value}</p>`
         }
         tarefa.value = ""
     }
     
 } 
+
+function risca(){
+    let risca = document.getElementsByClassName(".risca");
+    
+    console.log(risca);
+    
+  }

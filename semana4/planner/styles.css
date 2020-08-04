@@ -14,7 +14,9 @@ header {
 section {
     display: flex;
     justify-content: space-evenly;
+  
     height: 90vh;
+    
 }
 
 .semana {
