@@ -38,9 +38,3 @@ function salvar() {
     
 } 
 
-function risca(){
-    let risca = document.getElementsByClassName(".risca");
-    
-    console.log(risca);
-    
-  }
