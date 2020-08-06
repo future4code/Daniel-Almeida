@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlador de despesas</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="quadrado">
+            <form action="#">
+                <h2>Controlador de despesas</h2>
+                <h4>Cadastrar despesas</h4>
+                <label for="valor">Valor</label>
+                <input type="number" id="valor"> <br><br>
+                <label for="tipo">Tipo</label>
+                <select name="tipo" id="tipo">
+                    <option value="casa">Casa</option>
+                    <option value="viagem">Viagem</option>
+                    <option value="roles">Rolês</option>
+                    <option value="outros">Outros</option>
+                </select> <br><br>
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao"> <br><br>
+                <button onclick="salvar()">Cadastrar despesa</button>
+            </form>
+        </div>
+        <div class="quadrado">
+            <form action="#">
+                <h2>Despesa detalhada</h2>
+                <label for="tipo">Tipo</label>
+                <select name="tipo" id="tipo">
+                    <option value="casa">Casa</option>
+                    <option value="viagem">Viagem</option>
+                    <option value="roles">Rolês</option>
+                    <option value="outros">Outros</option>
+                </select> <br><br>
+                <label for="valor-minimo">Valor Mínimo</label>
+                <input type="text" id="valor-minimo"> <br><br>
+                <label for="valor-maximo">Valor Máximo</label>
+                <input type="text" id="valor-maximo"> <br><br>
+                <button onclick="filtrar()">Filtrar</button>
+            </form>
+        </div>
+        <div class="quadrado">
+            
+            <div id="valor-total">
+            <h2>Extrato</h2>
+            <h3>Valor total:</h3>
+            <h4 id="extrato"></h4>
+            </div>
+        </div>
+    </div>
+    <div class="quadrado" id="lista"></div>
+</body>
+</html>
