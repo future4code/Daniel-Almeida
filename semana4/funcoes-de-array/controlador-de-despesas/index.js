@@ -19,7 +19,7 @@ function salvar() {
     console.log(despesas)
 
     document.getElementById('valor').value = ""
-    
+    document.getElementById('tipo').value = ""
     document.getElementById('descricao').value = ""
 
     const lista = document.getElementById('lista')
@@ -41,12 +41,12 @@ function salvar() {
 
 }
 
-function filtrar() {
-    const tipos = document.getElementById('tipos').value
-    if (tipos === 'casa'){
-        const casa = casa.map((casa, index,array) =>{
-            if (casa.tipo)
-        })
-    }
+// function filtrar() {
+//     const tipos = document.getElementById('tipos').value
+//     if (tipos === 'casa'){
+//         const casa = casa.map((casa, index,array) =>{
+//             if (casa.tipo)
+//         })
+//     }
     
-}
+// }
