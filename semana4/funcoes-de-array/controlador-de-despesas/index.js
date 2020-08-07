@@ -41,12 +41,10 @@ function salvar() {
 
 }
 
-// function filtrar() {
-//     const tipos = document.getElementById('tipos').value
-//     if (tipos === 'casa'){
-//         const casa = casa.map((casa, index,array) =>{
-//             if (casa.tipo)
-//         })
-//     }
-    
-// }
+function filtrar() {
+    const tipos = document.getElementById('tipo2').value
+    console.log(tipos)
+   
+    console.log(despesas)       
+    }
+
