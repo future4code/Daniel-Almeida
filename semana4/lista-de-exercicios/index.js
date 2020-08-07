@@ -57,3 +57,27 @@
 
 // console.log("A diferença entre eles é", (a - b))
 
+// Exercícios de função
+
+// 1. 
+
+// let array = []
+// function addNumerous() {
+//     let a = prompt("digite um numero")
+//     let b = prompt("digite um numero")
+//     let c = prompt("digite um numero")
+//     let d = prompt("digite um numero")
+
+//     array.push(a, b, c, d)
+    
+// }
+// addNumerous()
+
+// // 2. 
+
+// const alerta = () => {
+//     return alert("Hello Future4")
+// }
+// alerta()
+
+
