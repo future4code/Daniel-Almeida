@@ -80,4 +80,38 @@
 // }
 // alerta()
 
+// Exercicios Objetos
+
+//1. array é um grupo de variaveis ou objetos, objetos são formado por keys e values
+
+// //2. 
+// function criarRetangulo(lado1, lado2){
+//     return console.log("largura", lado1)
+//     return console.log("altura", lado2)
+//     return console.log("perimetro", (2 * (lado1 + lado2)))
+//     return console.log("area", (lado1 * lado2))
+// }
+
+// 3.
+
+// let filme = {
+//     titulo: "Star Wars",
+//     ano: "1977",
+//     diretor: "George Lucas",
+//     atores: ["Luke", "Yoda"]
+// }
+// console.log("Venha assistir o filme", filme.titulo, ", de", filme.ano, "dirigido por", filme.diretor, "estrelando", filme.atores[0], filme.atores[1])
+
+// 4.
+
+let = pessoa {
+    nome: "daniel",
+    idade: "35",
+    email: "daniel@example.com",
+    endereço: "Padre lafaiete"
+}
+function anonimizarPessoa(){
+    pessoa.nome = "Anonimo"
+}
+
 
