@@ -100,18 +100,24 @@
 //     diretor: "George Lucas",
 //     atores: ["Luke", "Yoda"]
 // }
-// console.log("Venha assistir o filme", filme.titulo, ", de", filme.ano, "dirigido por", filme.diretor, "estrelando", filme.atores[0], filme.atores[1])
+// console.log("Venha assistir o filme", filme.titulo, ", de", filme.ano, "dirigido por", filme.diretor, "estrelando", filme.atores.toString())
+
+
 
 // 4.
 
-let = pessoa {
+const pessoa = [{
     nome: "daniel",
     idade: "35",
     email: "daniel@example.com",
     endereço: "Padre lafaiete"
-}
+}]
+
 function anonimizarPessoa(){
-    pessoa.nome = "Anonimo"
+    let anonimo = pessoa.map((name) => ({...name, nome: "anonimo"}))
+    
+    console.log(anonimo)
+    console.log(JSON.stringify(anonimo))
 }
 
 
