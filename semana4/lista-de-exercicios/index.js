@@ -106,18 +106,75 @@
 
 // 4.
 
-const pessoa = [{
-    nome: "daniel",
-    idade: "35",
-    email: "daniel@example.com",
-    endereço: "Padre lafaiete"
-}]
+// const pessoa = [{
+//     nome: "daniel",
+//     idade: "35",
+//     email: "daniel@example.com",
+//     endereço: "Padre lafaiete"
+// }]
 
-function anonimizarPessoa(){
-    let anonimo = pessoa.map((name) => ({...name, nome: "anonimo"}))
+// function anonimizarPessoa(){
+//     let anonimo = pessoa.map((name) => ({...name, nome: "anonimo"}))
     
-    console.log(anonimo)
-    console.log(JSON.stringify(anonimo))
+//     console.log(anonimo)
+//     console.log(JSON.stringify(anonimo))
+// }
+
+
+// Funções de array
+
+// 1.
+
+// let pessoa = [
+// 	{ nome: "Pedro", idade: 20 },
+// 	{ nome: "João", idade: 10 },
+// 	{ nome: "Paula", idade: 12 },
+// 	{ nome: "Artur", idade: 89 } 
+// ]
+// const callback = (adulto, index, array) => {
+//     return adulto.idade > 18
+// }
+// const adultos = pessoa.filter(callback)
+// console.log(adultos)
+// console.log(pessoa)
+// const callback2 = (crianca, index, array) => {
+//     return crianca.idade < 18
+// }
+// const crianca = pessoa.filter(callback2)
+// console.log(crianca)
+
+// 2.
+
+// const array = [1, 2, 3, 4, 5, 6]
+// let multiplicados = []
+
+// const numeroVezesDois = array.map(numero => numero * 2)
+
+
+// const numeroVezesTres = array.map(numero => String(numero * 3))
+
+// const sePar = array.map(numero => { 
+//     if(numero % 2 === 0){
+//     return String(numero + " é par")
+//     }else{
+//         return String(numero + " é impar")
+//     }
+// })
+// console.log(sePar)
+
+// 3. 
+
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+const callback = (permitido, index, array) => {
+         return permitido.idade > 14 && permitido.altura > 1.5 
 }
-
-
+const permite = pessoas.filter(callback)
+console.log(permite)
