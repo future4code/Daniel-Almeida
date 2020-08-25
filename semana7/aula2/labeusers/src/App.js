@@ -8,6 +8,7 @@ class App extends React.Component {
     users: [],
     inputName: '',
     inputEmail: '',
+    showUsers: false,
   }
 
   getUsers = () => {
@@ -54,6 +55,32 @@ class App extends React.Component {
       })
   }
 
+  deleteUser = (id) => {
+    const request = axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`, 
+    {
+      headers: {
+        Authorization: "daniel-almeida-jackson"
+      }
+    })
+
+
+    request
+      .then((response) => {
+        this.getUsers()
+        alert(`O usuario ${response} foi deletado`)
+      })
+      .catch((error) => {
+        alert("error cometido")
+      })
+
+
+  }
+
+  changeUsers = () => {
+    this.setState({showUsers : !this.state.showUsers})
+  }
+  
+
   componentDidMount() {
     this.getUsers();
   }
@@ -67,17 +94,27 @@ class App extends React.Component {
       this.setState({ inputEmail: evento.target.value });
     }
 
+    const paginaRenderizada = () => {
+      if (this.state.showUsers) {
+        return <div><h1>Lista de usuarios</h1>
+        {this.state.users.map((item) => {
+             return <p key={item.id}>{item.name}<button onClick={() => this.deleteUser(item.id)}>Deletar</button></p>;
+           })}</div>
+      } else {
+        return <div><h1>Cadastro de usuario</h1>
+        <input value={this.state.inputName} onChange={onChangeInputName}></input><label>Nome</label><br/><br/>
+        <input value={this.state.inputEmail} onChange={onChangeInputEmail}></input><label>Email</label><br/><br/>
+        <button onClick={this.postUsers}>Criar usuario</button>
+        </div>
+      }
+    };
+
   return (
     <div className="App">
-     <h1>Cadastro de usuario</h1>
-     <input value={this.state.inputName} onChange={onChangeInputName}></input><label>Nome</label><br/><br/>
-     <input value={this.state.inputEmail} onChange={onChangeInputEmail}></input><label>Email</label><br/><br/>
-     <button onClick={this.postUsers}>Criar usuario</button>
-     <hr/>
-     <h1>Lista de usuarios</h1>
-     {this.state.users.map((item) => {
-          return <p key={item.id}>{item.name}</p>;
-        })}
+    <button onClick={this.changeUsers}>{this.state.showUsers ? "Mostrar cadastro" : "Mostrar Usuários"}</button>
+    {paginaRenderizada()}
+     
+     
     </div>
   )}
 }
