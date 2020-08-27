@@ -10,8 +10,19 @@ const Card = styled.div`
   gap: 10px;
   align-items: center;
 `
+const Header = styled.section`
+border: 1px solid;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;
 
-const Main = styled.div`
+`
+
+const CardBox = styled.div`
 
 width: 100%;
 display: flex;
@@ -56,7 +67,12 @@ class App extends React.Component {
   render() {
 console.log("este", this.state.lista)
     return (
-      <Main>
+      <div>
+      <Header>
+      <input/>
+
+      </Header>
+      <CardBox>
      
      
         {this.state.lista.map((ator) => {
@@ -71,7 +87,8 @@ console.log("este", this.state.lista)
           );
         })}
      
-    </Main>
+    </CardBox>
+    </div>
   );
 
   }
