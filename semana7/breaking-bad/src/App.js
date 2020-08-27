@@ -18,18 +18,17 @@ border: 1px solid;
   gap: 10px;
   align-items: center;
   justify-content: center;
-  margin: 10px 10px;
+  margin: 20px 30px;
 
 `
 
 const CardBox = styled.div`
-
+align-items: center;
+  justify-content: center;
 width: 100%;
 display: flex;
 gap: 10px;
 margin-top: 10px;
-margin-left: 20px;
-margin-right: 20px;
 flex-wrap: wrap;
 `
 
