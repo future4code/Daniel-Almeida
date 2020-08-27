@@ -4,36 +4,62 @@ import styled from 'styled-components'
 
 const Card = styled.div`
   border: 1px solid;
-  
+  border-radius: 50px 20px;
+
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  background: #00aec9;
+  color: #fff;
   align-items: center;
 `
 const Header = styled.section`
+ background: #00aec9;
+  color: #fff;
 border: 1px solid;
+border-radius: 50px 20px;
   height: 60px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  
   align-items: center;
   justify-content: center;
   margin: 20px 30px;
 
 `
+const Search = styled.input`
+ background: white;
+  color: #00aec9;
+  cursor: pointer;
+  margin-bottom: 0;
+  
+  height: 35px;
+  border-color: transparent;
+  box-shadow: 0px;
+  outline: none;
+  transition: 0.15s;
+  text-align: center;
+  border-radius: 50px 20px;
+  &:active {
+    background-color: #f1ac15;
+  
+
+`
 
 const CardBox = styled.div`
+
 align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 width: 100%;
 display: flex;
-gap: 10px;
-margin-top: 10px;
+
+
 flex-wrap: wrap;
 `
 
 const Imagem = styled.img`
 border: 1px solid;
+border-radius: 50px 20px 0px 0px;
 width: 200px;
 height: 250px;
 
@@ -44,6 +70,7 @@ class App extends React.Component {
 
   state = {
     lista: [],
+    text: "",
     
   };
 
@@ -52,7 +79,6 @@ class App extends React.Component {
       .get("https://www.breakingbadapi.com/api/characters")
       .then((resposta) => {
         this.setState({ lista: resposta.data });
-        console.log(resposta.data)
       })
       .catch((erro) => {
         console.log(erro);
@@ -63,30 +89,40 @@ class App extends React.Component {
     this.pegarLista();
   }
 
+  getText = (event) => {
+    
+    this.setState({text: event.target.value})
+    
+  }
+
   render() {
-console.log("este", this.state.lista)
+
+    const atorList = this.state.lista
+ 
+    .filter(ator => {
+      return ator.name.toLowerCase().indexOf(this.state.text) >= 0
+    })
+
+    .map((ator) => {
+      return (        
+        <Card>
+          <Imagem src={ator.img} alt='' />
+          <p key={ator.char_id} value={ator.name}>
+            {ator.name} 
+          </p>
+        </Card>
+      );
+    })
+
+    
     return (
       <div>
-      <Header>
-      <input/>
-
+      <Header >
+      <Search onChange={this.getText}/>
       </Header>
-      <CardBox>
-     
-     
-        {this.state.lista.map((ator) => {
-          return (
-            
-            <Card>
-            <Imagem src={ator.img} alt='' />
-            <p key={ator.char_id} value={ator.name}>
-              {ator.name} 
-            </p>
-            </Card>
-          );
-        })}
-     
-    </CardBox>
+      <CardBox>    
+        {atorList}
+     </CardBox>
     </div>
   );
 
