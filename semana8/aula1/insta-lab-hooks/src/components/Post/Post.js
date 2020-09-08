@@ -22,14 +22,40 @@ const Post = (props) => {
   
 
   const onClickCurtida = () => {
-    
+    if (curtido) {
+      setCurtido(!curtido);
+      setNumeroCurtidas(numeroCurtidas - 1)
+    }
+    else {
+      setCurtido(!curtido);
+      setNumeroCurtidas(numeroCurtidas + 1)
+    }
   };
 
   const onClickComentario = () => {
+    setComentando(!comentando)
+        
   };
 
   const enviarComentario = (comentario) => {
+    const novaListaDeComentarios = [...comentarios, comentario]
+
+    setComentarios(novaListaDeComentarios)
+    setComentando(false)
+    setNumeroComentarios(numeroComentarios+1)
   }
+  
+  const caixaDeComentario = comentando ? ( <SecaoComentario enviarComentario={enviarComentario}/> ) : (
+    comentarios.map(comentario => {
+      return (
+        <CommentContainer>
+          <p>{comentario}</p>
+        </CommentContainer>
+      )
+    })
+  )
+
+
 
   const iconeCurtida = curtido ? (iconeCoracaoPreto) : (iconeCoracaoBranco)
 
@@ -44,19 +70,21 @@ const Post = (props) => {
 
       <PostFooter>
         <IconeComContador
-          icone={iconeCoracaoPreto}
+          icone={iconeCurtida}
           onClickIcone={onClickCurtida}
-          // valorContador={numeroCurtidas}
+          valorContador={numeroCurtidas}
         />
 
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={onClickComentario}
-          // valorContador={numeroComentarios}
+          valorContador={numeroComentarios}
         />
       </PostFooter>
-      {/* {caixaDeComentario} */}
+       {caixaDeComentario} 
     </PostContainer>
+    
+  
   )
 }
 
