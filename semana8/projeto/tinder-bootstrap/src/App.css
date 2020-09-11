@@ -1,0 +1,31 @@
+.align {
+  justify-content: center;
+  text-align: center;
+}
+.right{
+  justify-content: flex-start;
+  text-align: flex-start;
+}
+
+.card{  
+  width: 330px;
+  height: 90vh;
+  left: 35%;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-image: initial;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.img{ 
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+}
+
+.match{
+  margin-top: 20px;  
+}
