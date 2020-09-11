@@ -25,7 +25,7 @@ export default function Cards() {
   }, [])
 
   const postCardTrue = () => {
-
+    getCard()
     const body = {
       "id": `${card.id}`,
       "choice": true
