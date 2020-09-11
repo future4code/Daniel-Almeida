@@ -4,6 +4,7 @@ import Cards from './Components/Cards'
 import Matches from './Components/Matches'
 import {Card, Button, Container, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios'
 
 function App() {
   const [ showButton, setButton ] = useState(true)
@@ -11,7 +12,23 @@ function App() {
   const changeShowButton = () => {
     setButton(!showButton)    
   }
+  const clean = () => {
 
+            
+    const body = {
+      "id": "PatusZf4mHH6UoZfYC8I",
+      
+    }
+
+    axios
+      .put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:danielameida/clear", body)
+      .then(response => {
+                       
+      })
+      .catch(err => {
+        console.log(err)
+      })    
+  }
   return (
     <>
       <Card className="card">
@@ -32,7 +49,7 @@ function App() {
       <Container className="right">
         <Row>
           <Col>
-            <Button>Clear All</Button>
+            <Button onClick={clean} >Clear All</Button>
           </Col>
         </Row>
       </Container>

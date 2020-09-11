@@ -25,15 +25,15 @@ export default function Cards() {
   }, [])
 
   const postCardTrue = () => {
-    getCard()
+    
     const body = {
       "id": `${card.id}`,
       "choice": true
     }
     axios
-      .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:danielameida/person", body)
+      .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:danielameida/choose-person", body)
       .then(response => {
-           
+        getCard() 
       })
       .catch(err => {
         console.log(err)
@@ -42,21 +42,23 @@ export default function Cards() {
 
   const postCardFalse = () => {
 
-    getCard()        
+            
     const body = {
       "id": `${card.id}`,
       "choice": false
     }
 
     axios
-      .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:danielameida/person", body)
+      .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:danielameida/choose-person", body)
       .then(response => {
-                           
+        getCard()               
       })
       .catch(err => {
         console.log(err)
       })    
   }
+
+  
 
 
 
