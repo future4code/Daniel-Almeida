@@ -1,15 +1,15 @@
 import React from 'react';
 import Router from './Router/Router'
-import Header from './Components/Header'
-import './app.css'
+
+import './App.css'
 
 function App() {
   return (
-    <div>
-      <Header/>
+    <div>      
       <Router />
     </div>
   );
 }
 
 export default App;
+
