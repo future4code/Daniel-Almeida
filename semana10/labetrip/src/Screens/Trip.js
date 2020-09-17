@@ -6,14 +6,15 @@ import "../App.css"
 
 export default function Trip() {
 
-    const [ matches, setMatches ] = useState([])
-
+    const [ trips, setTrips ] = useState([])
+    let token = window.localStorage.getItem("token")
     useEffect(() => {
+        
         axios
-        .get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/trips")
+        .get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/daniel-almeida-jackson/trips")
         .then(response => {
-          setMatches(response.data.trips)
-          console.log(response.data)          
+          setTrips(response.data.trips)
+          console.log(token)          
         })
         .catch(err => {
           console.log(err)
@@ -22,7 +23,7 @@ export default function Trip() {
 
     return (
         <div className="card overflow-auto">            
-            {matches.map(match => {
+            {trips.map(match => {
                 return (
                     <Card key={match.id} className="card-item" style={{ width: '18rem' }}>
                     <Card.Img variant="top" src="https://picsum.photos/100" />
@@ -31,7 +32,8 @@ export default function Trip() {
                         <Card.Text>
                         {match.description}
                         </Card.Text>
-                        <Button variant="primary">Enjoy</Button>
+                        {token && (<><Button variant="primary">Enjoy</Button><span>------</span><Button variant="danger">Delete trip</Button>
+                        </>)}
                     </Card.Body>
                     </Card>
                 )

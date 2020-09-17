@@ -9,3 +9,7 @@ export const goToTrip = (history) => {
 export const goToMembers = (history) => {
     history.push("/members");
   };
+
+  export const goToCreate = (history) => {
+    history.push("/create");
+  };

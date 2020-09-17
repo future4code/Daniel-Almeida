@@ -19,6 +19,7 @@
 }
 
 .card {
+    
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -28,7 +29,7 @@
 }
 
 .card-item{
-    margin: 1rem;
+    margin: 2rem;
     padding: 10px 20px;
     display: flex;
     align-items: center;

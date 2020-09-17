@@ -7,7 +7,7 @@ import '../App.css'
 const baseUrl =
   "https://us-central1-labenu-apis.cloudfunctions.net/labeX/daniel-almeida-jackson";
 
-function LoginPage() {
+function CreatePage() {
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const history = useHistory();
@@ -15,9 +15,9 @@ function LoginPage() {
   useEffect(() => {
     const token = window.localStorage.getItem("token");
 
-    if (token) {
-      history.push("/trip");
-    }
+    // if (token) {
+    //   history.push("/create");
+    // }
   }, [history]);
 
   const handleEmailChange = (event) => {
@@ -48,13 +48,14 @@ function LoginPage() {
 
   return (
     <div>
-      <Container fluid>            
+      <Container fluid>
+            
             <Row>
                 <Col xs={2}></Col>
                 <Col xs={8}>
                 <Form className="login">
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label>Name of trip</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" value={emailValue} onChange={handleEmailChange} />
                         <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
@@ -81,4 +82,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default CreatePage;
