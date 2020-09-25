@@ -10,7 +10,7 @@ function App() {
   function AlertDismissible() {
     
     const [show, setShow] = useState(true);
-    const [ textInput, setTextInput] = useState("Sele")
+    const [ textInput, setTextInput] = useState("Select ")
     const [ selectInput, setSelectInput] = useState("")
     
     const onChangeInput = (event) => {
