@@ -1,17 +1,28 @@
 import React, {useState} from 'react';
-import { Alert, Button, Dropdown, DropdownButton, InputGroup, FormControl } from 'react-bootstrap'
-import { HeaderAlert } from "./style";
+import { Alert, Button, Dropdown, DropdownButton, InputGroup } from 'react-bootstrap'
 import Task from "./components/Task";
 import axios from "axios";
 
-
 function App() {
+
+  const [show, setShow] = useState(false);
+  const [ tasks, setTasks ] = useState([])   
+
+  const getTasks = () => {
+      axios
+      .get("https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-jackson-daniel-almeida")
+      .then(response => {
+        setTasks(response.data)         
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
   
-  function AlertDismissible() {
-    
-    const [show, setShow] = useState(true);
-    const [ textInput, setTextInput] = useState("Select ")
-    const [ selectInput, setSelectInput] = useState("")
+  function AlertDismissible() {    
+
+    const [ selectInput, setSelectInput] = useState("Select day")
+    const [ textInput, setTextInput] = useState("")  
     
     const onChangeInput = (event) => {
       setTextInput(event.target.value)
@@ -37,8 +48,7 @@ function App() {
     }
     const saturday = () => {
       setSelectInput("Saturday")
-    }
-    
+    }    
 
     const postTasks = () => {
       const body = {
@@ -49,14 +59,13 @@ function App() {
       axios
       .post("https://us-central1-labenu-apis.cloudfunctions.net/generic/planner-jackson-daniel-almeida", body)
       .then(response => {
-                 
+        getTasks()
       })
       .catch(err => {
         console.log(err)
       })
     }
 
-  
     return (
       <>
         <Alert show={show} variant="success">
@@ -66,9 +75,7 @@ function App() {
                <DropdownButton
                 as={InputGroup.Append}
                 variant="outline-secondary"
-                title="Day of Week"
-                id="input-group-dropdown-2"
-                
+                title="Day of Week"          
               >
                 <Dropdown.Item onClick={sunday}>Sunday</Dropdown.Item>
                 <Dropdown.Item onClick={monday}>Monday</Dropdown.Item>
@@ -79,37 +86,30 @@ function App() {
                 <Dropdown.Item onClick={saturday}>Saturday</Dropdown.Item>
               </DropdownButton>
               <Button variant="outline-secondary">{selectInput}</Button>
-                <input onChange={onChangeInput}/>              
-              <Button variant="outline-secondary" onClick={postTasks}>Create</Button>
-              
+              <input placeholder="type your task" onChange={onChangeInput}/>              
+              <Button variant="outline-secondary" onClick={postTasks}>Create</Button>              
             </InputGroup.Prepend>          
-        </InputGroup>
-         
-          <hr />
-          
+          </InputGroup>        
+          <hr />          
           <div className="d-flex justify-content-end">
-            <Button onClick={() => setShow(false)} variant="outline-success">
-              Close me y'all!
-            </Button>
+            <Button onClick={() => setShow(false)} variant="outline-success">Close me y'all!</Button>
           </div>
-        </Alert>
-        
-        {!show && <Button style={{position:"fixed", top:"30px", right:"30px"}} onClick={() => setShow(true)}>Show Create</Button>}
+        </Alert>        
       </>
     );
   } 
 
   return (
     <div>
-        <HeaderAlert variant="danger">
+        <Alert variant="danger">
           <Alert.Heading>Planner</Alert.Heading>
-          <p>
-            What you gonna do today?
-          </p>
-          
-        </HeaderAlert>
+          {!show && <Button style={{position:"fixed", top:"30px", right:"30px"}} onClick={() => setShow(true)}>Show Create</Button>}
+          <p>What you gonna do today</p>          
+          {tasks.length === 0 && <p style={{textAlign: "center"}}>You don't have tasks</p>} 
+          {tasks.length > 0 && <p style={{textAlign: "center"}}>You have: {tasks.length} task</p>} 
+        </Alert>
         <AlertDismissible/>
-        <Task />
+        <Task getTasks={getTasks} tasks={tasks}/>
     </div>
   );
 }

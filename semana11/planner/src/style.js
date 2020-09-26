@@ -1,8 +1,9 @@
 import styled from "styled-components"
-import {Alert} from "react-bootstrap"
 
 
-export const HeaderAlert = styled(Alert) `
 
-
+export const Flex = styled.div `
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 `
