@@ -33,3 +33,28 @@ export const signUp = (body, history, setButtonName, setIsLoading) => {
       alert("Falha no Cadastro, tente novamente")
     })
 }
+
+export const vote = (id) => {
+  
+  const body = {
+    direction: +1
+  }
+    
+    axios.put(`${BASE_URL}/posts/${id}/vote`,
+      body, 
+     {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    })
+      .then((response) => {
+        console.log(response)
+        
+      })
+      .catch((error) => {
+        console.log(error)
+        
+        alert('Ocorreu um erro no voto, tente novamente')
+      })
+  
+    }

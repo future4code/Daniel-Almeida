@@ -40,7 +40,8 @@ height: 30px;
 background-color: ${primaryColor};
 font-size: 18px;
 color: white;
-
+display: flex;
+justify-content: space-between;
 `
 
 
