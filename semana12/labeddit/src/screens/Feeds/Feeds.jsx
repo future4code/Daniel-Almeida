@@ -5,7 +5,7 @@ import PostsForm from './PostsForm'
 import useRequestData from '../../hooks/useRequestData'
 import Loading from '../../components/Loading/Loading'
 import { FeedContainer } from './styled'
-import { goToLogin, goToRecipeDetail } from '../../routes/Coordinator'
+import { goToLogin } from '../../routes/Coordinator'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../../constants/urls'
@@ -70,7 +70,7 @@ const PostFeedPage = () => {
       return (
         <PostCard
           key={item.id}
-          
+          title={item.title}
           text={item.text}
           username={item.username}
           votes={item.votesCount}

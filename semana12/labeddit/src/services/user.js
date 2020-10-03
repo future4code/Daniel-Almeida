@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { BASE_URL } from '../constants/urls'
-import { goToFeeds } from '../routes/Coordinator'
+import { goToFeeds, goToLogin } from '../routes/Coordinator'
 
 export const login = (body, history, setButtonName, setIsLoading) => {
   setIsLoading(true)
@@ -57,4 +57,23 @@ export const vote = (id) => {
         alert('Ocorreu um erro no voto, tente novamente')
       })
   
+    }
+
+    export const post = (body, history) => {
+            axios.post(`${BASE_URL}/posts`, body, {
+        headers: {
+          Authorization: localStorage.getItem('token')
+        }
+      }
+      )
+        .then((response) => {
+          
+          goToLogin(history)
+        
+        })
+        .catch((error) => {
+          console.log(error)
+          
+          alert("Falha no Posts, tente novamente")
+        })
     }

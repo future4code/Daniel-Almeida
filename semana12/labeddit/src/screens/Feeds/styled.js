@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {primaryColor, secondaryColor} from '../../constants/colors'
 
 
-export const PostCardContainer = styled.div`
+export const PostCardContainer = styled.form`
   width: 70vw;
   margin-top: 20px;
   border: 1px solid gray;

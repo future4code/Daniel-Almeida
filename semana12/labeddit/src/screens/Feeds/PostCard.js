@@ -24,6 +24,7 @@ const PostsCard = (props) => {
             {props.username}
           </Username>
           <Typography align={'center'}>
+            <strong>{props.title}</strong> <br/>
             {props.text}
           </Typography>
           <VoteContainer><div><Icon path={mdiArrowUpBold}
