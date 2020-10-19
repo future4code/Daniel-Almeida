@@ -10,6 +10,4 @@ export const goToLogin = (history) => {
     history.push('/feeds')
   }
   
-  export const goToPosts = (history) => {
-    history.push('/posts')
-  }
+  
