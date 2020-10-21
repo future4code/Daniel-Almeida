@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "start": "tsc ./src/exe4.ts && node ./src/exe4.js",
+    "start": "tsc && node ./src/exe4.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
