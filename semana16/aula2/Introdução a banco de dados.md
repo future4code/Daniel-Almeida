@@ -5,33 +5,23 @@
 _
 
 ```sh
-ALTER TABLE Actor ADD favorite_ice_cream_flavor VARCHAR(255);
-
+CREATE TABLE Actor (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR (255) NOT NULL,
+    salary FLOAT NOT NULL,
+    birth_date DATE NOT NULL,
+		gender VARCHAR(6) NOT NULL
+);
 ```
-O comando abaixo adiciona uma coluna na tabela de Actor para representar o sabor de sorvete favorito da celebridade
+VARCHAR(255) é utilizado pra dizer que a string tem o tamanho 255
+FLOAT número não inteiro
+NOT NULL o campo não pode estar vazio
+PRIMARY KEY chave primária
 
-```sh
-ALTER TABLE Actor DROP COLUMN salary;
+O comando **SHOW** é utilizado para mostrar informações como a **DATABASE** que está em uso e mostrar as tabelas com **SHOW** **TABLES** 
 
-```
-Remove a coluna salário
+O comando **DESCRIBE** retorna a tabela grid com as descrição 
 
-```sh
-ALTER TABLE Actor CHANGE gender sex VARCHAR(6);
-
-```
-Troca gender por sex
-
-```sh
-ALTER TABLE Actor CHANGE gender gender VARCHAR(255);
-
-```
-Troca o tamanho do VARCHAR
-
-```sh
-ALTER TABLE Actor CHANGE gender gender VARCHAR(100);
-```
-Altera a coluna gender da tabela ACTOR para que ele aceite strings com até 100 caracteres
 ## Segunda query
 
 ```sh
