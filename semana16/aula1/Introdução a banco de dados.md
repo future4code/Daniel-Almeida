@@ -35,54 +35,38 @@ Altera a coluna gender da tabela ACTOR para que ele aceite strings com até 100 
 ## Segunda query
 
 ```sh
-INSERT INTO Actor (id, name, salary, birth_date)
-VALUES(
-  "001", 
-  "Tony Ramos",
-  400000,
-  "1948-08-25", 
-  "male"
-);
+UPDATE Actor
+SET birth_date = "2000-00-00"
+WHERE id = "003"
 ```
+Query que atualize o nome e a data de nascimento do ator com o id 003
 
-Tentar adicionar outro elemento com o mesmo id ocorre erro:
->	INSERT INTO Actor (id, name, salary, birth_date, gender) VALUES(   "001",    >"Glória Pires",   12000000,   "1963-08-23",    "female" )	Error Code: 1062. Duplicate >entry '001' for key 'PRIMARY'	0.024 sec
-
-**A chave primaria é única**
 ```sh
-INSERT INTO Actor (id, name, salary)
-VALUES(
-  "003", 
-  "Fernanda Montenegro",
-  300000,
-  "1929-10-19", 
-  "female"
-);
+UPDATE Actor
+SET name = "JULIANA PÃES"
+WHERE name = "Juliana Paes";
 ```
+Query que atualize o nome da atriz Juliana Paes para JULIANA PÃES
 
->	INSERT INTO Actor (id, name, salary) VALUES(   "003",    "Fernanda Montenegro",   >300000,   "1929-10-19",    "female" )	Error Code: 1136. Column count doesn't match >value count at row 1	0.115 sec
-
-**Os valores da colunas não combina com os valores das linhas**
 ```sh
-INSERT INTO Actor (id, salary, birth_date, gender) VALUES(   "004",   400000,   "1949-04-18",    "male" )	Error Code: 1364. Field 'name' doesn't have a default value	0.083 sec
+UPDATE Actor
+SET
+  name = "Lázaro Ramos",
+  salary = 10000,
+  birth_date = "1980-11-01",
+  gender = "male"
+WHERE
+  id = "005"
 ````
->	INSERT INTO Actor (id, salary, birth_date, gender) VALUES(   "004",   400000,   "1949-04-18",    "male" )	Error Code: 1364. Field 'name' doesn't have a default value	0.083 sec
+Query que atualize todas as informações do ator com o id 005
 
-**O campo "name" não possui valor padrão**
 ```sh
-INSERT INTO Actor (id, name, salary, birth_date, gender)
-VALUES(
-  "005", 
-  "Juliana Paes",
-  719333.33,
-  1979-03-26, 
-  "female"
+UPDATE Actor
+SET name = "Moacyr Franco"
+WHERE id = "123"
 );
 ````
->15:35:35	INSERT INTO Actor (id, name, salary, birth_date, gender) VALUES(   "005",    "Juliana Paes",   719333.33,   1979-03-26,    "female" )	Error Code: 1292. Incorrect date value: '1950' for column 'birth_date' at row 1	0.020 sec
-
-**O valor para data é incorreto**
-
+16:16:07	UPDATE Actor SET name = "Moacyr Franco" WHERE id = "123"	0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0	0.025 sec
 
 ## Terceira query
 ```sh
