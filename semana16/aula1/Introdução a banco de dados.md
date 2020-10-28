@@ -90,3 +90,48 @@ SELECT id, name from Actor WHERE salary > 500000
 
 ## Quarta query
 
+```sh
+SELECT MAX(salary) from Actor 
+```
+
+```sh
+SELECT MIN(salary) from Actor WHERE gender = 'female' 
+```
+
+```sh
+SELECT * from Actor WHERE gender = 'female'
+```
+
+```sh
+SELECT SUM(salary) from Actor 
+```
+
+## Quinta query
+
+```ts
+SELECT COUNT(*), gender
+FROM Actor
+GROUP BY gender
+````
+Retorna uma tabela de gêneros e quantidades
+
+```
+SELECT COUNT(*), id
+FROM Actor
+GROUP BY name DESC
+```
+```
+SELECT * FROM Actor
+ORDER BY salary ASC
+```
+retorne todos os atores ordenados pelo salário
+
+```
+SELECT * FROM Actor
+ORDER BY salary DESC
+LIMIT 3
+````
+```
+SELECT AVG(salary), gender FROM Actor
+GROUP BY gender;
+```
