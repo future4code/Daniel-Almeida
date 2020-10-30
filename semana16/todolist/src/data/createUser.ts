@@ -6,8 +6,11 @@ export const createTodoListUser = async (
     email: string
   ): Promise<void> => {
     await connection.raw(`INSERT INTO TodoListUser (name, nickname, email) 
-    VALUES (${name},
+    VALUES (
+      "${name}",
         "${nickname}",
         "${email}")`)
       
   };
+
+  

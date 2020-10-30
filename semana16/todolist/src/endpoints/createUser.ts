@@ -11,7 +11,7 @@ export const create = async (req: Request, res: Response) => {
        req.body.email
      );
  
-     res.status(200).send();
+     res.status(200).send("New user");
        console.log("Usuário criado com sucesso!")
    } catch (err) {
      res.status(400).send({
