@@ -2,6 +2,7 @@ import express, { Express, Request, Response} from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 import { create } from "../src/endpoints/createUser"
+import { getTodoListUserById, editTodoListUser } from "./data/data"
 import knex from 'knex'
 import dotenv from "dotenv"
 
@@ -9,7 +10,7 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
-console.log(process.env.teste)
+
 
 export const connection = knex({	// Estabelece conexão com o banco
    client: "mysql",
@@ -28,6 +29,31 @@ app.use(express.json());
 app.use(cors())
 
 app.put("/user", create)
+
+app.get("/user/:id", async (req: Request, res: Response) => {
+   try {
+       const user = await getTodoListUserById(req.params.id as any);
+
+       res.status(200).send({user});
+   } catch (err) {
+       res.status(400).send({
+       message: err.message,
+       });
+   }
+});
+
+app.post("/user/edit/:id", async (req: Request, res: Response) => {
+   try {
+     await editTodoListUser(req.params.id as any, req.body.name, req.body.nickname);
+     res.status(200).send({
+       message: "Success",
+     });
+   } catch (err) {
+     res.status(400).send({
+       message: err.message,
+     });
+   }
+ });
 
 
 
