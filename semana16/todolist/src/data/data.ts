@@ -1,4 +1,5 @@
 import {connection} from "../index"
+import moment from 'moment';
 
 export const createTodoListUser = async (
     name: string,
@@ -35,3 +36,18 @@ export const createTodoListUser = async (
       .where("id", id);
   };
   
+  export const createTodoListTask = async (
+    title: string,
+    description: string,
+    limitDate: string,
+    creator_user_id: number
+  ): Promise<void> => {
+    await connection
+      .insert({
+        title: title,
+        description: description,
+        limit_date: moment(limitDate, "DD/MM/YYYY").format("YYYY/MM/DD"),
+        creator_user_id: creator_user_id
+      })
+      .into("TodoListTask");
+  };

@@ -2,7 +2,7 @@ import express, { Express, Request, Response} from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 import { create } from "../src/endpoints/createUser"
-import { getTodoListUserById, editTodoListUser } from "./data/data"
+import { getTodoListUserById, editTodoListUser, createTodoListTask } from "./data/data"
 import knex from 'knex'
 import dotenv from "dotenv"
 
@@ -48,6 +48,24 @@ app.post("/user/edit/:id", async (req: Request, res: Response) => {
      res.status(200).send({
        message: "Success",
      });
+   } catch (err) {
+     res.status(400).send({
+       message: err.message,
+     });
+   }
+ });
+
+ app.put("/task", async (req: Request, res: Response) => {
+   try {
+     await createTodoListTask(
+       req.body.title,
+       req.body.description,
+       req.body.limit_date,
+       req.body.creator_user_id
+     );
+ 
+     res.status(200).send();
+       console.log("New task!")
    } catch (err) {
      res.status(400).send({
        message: err.message,
