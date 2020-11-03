@@ -1,137 +1,84 @@
-# Introdução a banco de dados
+# Relações SQL
 
-## Primeira query
+## Exercício 1
 
-_
+a) É uma chave primária de outra tabela que serve para relacionar.
 
-```sh
-ALTER TABLE Actor ADD favorite_ice_cream_flavor VARCHAR(255);
-
+c)
 ```
-O comando abaixo adiciona uma coluna na tabela de Actor para representar o sabor de sorvete favorito da celebridade
+12:48:53	INSERT INTO Rating (id, comment, rate, movie_id)  VALUES (   "003",     "Muito bom TB!",     7,   "007" )	Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`jackson-daniel-viana`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `Movie` (`id`))	0.051 sec
 
-```sh
-ALTER TABLE Actor DROP COLUMN salary;
+``` 
 
-```
-Remove a coluna salário
+## Exercício 2
 
-```sh
-ALTER TABLE Actor CHANGE gender sex VARCHAR(6);
+a) Uma tabela que relaciona o filme com ator
 
-```
-Troca gender por sex
-
-```sh
-ALTER TABLE Actor CHANGE gender gender VARCHAR(255);
-
-```
-Troca o tamanho do VARCHAR
-
-```sh
-ALTER TABLE Actor CHANGE gender gender VARCHAR(100);
-```
-Altera a coluna gender da tabela ACTOR para que ele aceite strings com até 100 caracteres
-## Segunda query
-
-```sh
-UPDATE Actor
-SET birth_date = "2000-00-00"
-WHERE id = "003"
-```
-Query que atualize o nome e a data de nascimento do ator com o id 003
-
-```sh
-UPDATE Actor
-SET name = "JULIANA PÃES"
-WHERE name = "Juliana Paes";
-```
-Query que atualize o nome da atriz Juliana Paes para JULIANA PÃES
-
-```sh
-UPDATE Actor
-SET
-  name = "Lázaro Ramos",
-  salary = 10000,
-  birth_date = "1980-11-01",
-  gender = "male"
-WHERE
-  id = "005"
+c)
 ````
-Query que atualize todas as informações do ator com o id 005
-
-```sh
-UPDATE Actor
-SET name = "Moacyr Franco"
-WHERE id = "123"
-);
+13:38:59	INSERT INTO MovieCast (movie_id, actor_id)  VALUES (   "001",     "010"    )	Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`jackson-daniel-viana`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`))	0.073 sec
 ````
-16:16:07	UPDATE Actor SET name = "Moacyr Franco" WHERE id = "123"	0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0	0.025 sec
-
-## Terceira query
-```sh
-SELECT id, name from Actor WHERE gender = "female"
-```
-
->Retorna todas as atrizes
-
-```sh
-SELECT salary from Actor WHERE name = "Tony Ramos"
+d)
+````
+13:41:30	DELETE FROM Actor WHERE id = "001"	Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`jackson-daniel-viana`.`MovieCast`, CONSTRAINT `MovieCast_ibfk_2` FOREIGN KEY (`actor_id`) REFERENCES `Actor` (`id`))	0.039 sec
 ````
 
-```sh
-SELECT salary from Actor WHERE gender = "invalid"
+## Exercício3
+
+a) Operador condicional 
+
+b) 
 ````
->Retorna vazio pq "invalid" não da match
-
-```sh
-SELECT id, name from Actor WHERE salary > 500000
-```
-
-## Quarta query
-
-```sh
-SELECT MAX(salary) from Actor 
-```
-
-```sh
-SELECT MIN(salary) from Actor WHERE gender = 'female' 
-```
-
-```sh
-SELECT * from Actor WHERE gender = 'female'
-```
-
-```sh
-SELECT SUM(salary) from Actor 
-```
-
-## Quinta query
-
-```ts
-SELECT COUNT(*), gender
-FROM Actor
-GROUP BY gender
+SELECT title, Movie.id, rate FROM Movie 
+INNER JOIN Rating ON Movie.id = Rating.movie_id;
 ````
-Retorna uma tabela de gêneros e quantidades
 
-```
-SELECT COUNT(*), id
-FROM Actor
-GROUP BY name DESC
-```
-```
-SELECT * FROM Actor
-ORDER BY salary ASC
-```
-retorne todos os atores ordenados pelo salário
+## Exercício4
 
-```
-SELECT * FROM Actor
-ORDER BY salary DESC
-LIMIT 3
+a)
 ````
+SELECT m.id as movie_id, m.title, r.rate as rating, r.comment as rating_comment FROM Movie m
+LEFT JOIN Rating r ON m.id = r.movie_id;
+````
+b)
 ```
-SELECT AVG(salary), gender FROM Actor
-GROUP BY gender;
+SELECT m.id as movie_id, m.title, mc.actor_id FROM Movie m
+RIGHT JOIN MovieCast mc ON mc.movie_id = m.id;
+```
+
+c)
+```
+SELECT AVG(r.rate), m.id, m.title FROM Movie m
+LEFT JOIN Rating r ON m.id = r.movie_id
+GROUP BY (m.id);
+```
+
+## Exercício5
+
+a) Porque está utilizando 3 tabelas
+
+b)
+````
+SELECT m.id, title, a.name FROM Movie m
+LEFT JOIN MovieCast mc ON m.id = mc.movie_id
+JOIN Actor a ON a.id = mc.actor_id;
+````
+c)Faltou um . no lugar da virgula em "m.title"
+````
+SELECT m.id as movie_id, m.title, a.id as actor_id, a.name FROM Movie m
+LEFT JOIN MovieCast mc ON m.id = mc.movie_id
+JOIN Actor a ON a.id = mc.actor_id;
+````
+
+## Exercício6
+
+a) relação de M:N
+
+b)
+```
+CREATE TABLE Oscar (
+		movie_id VARCHAR(255),
+		oscar VARCHAR(255),
+    FOREIGN KEY (movie_id) REFERENCES Movie(id)
+   
 ```

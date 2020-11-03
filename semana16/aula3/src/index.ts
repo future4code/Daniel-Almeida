@@ -2,10 +2,7 @@ import express, { Express } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 import { getAllActors } from "./endpoints/getAllActors";
-import { searchActorByName} from "./data/searchActorByName"
-
 import knex from 'knex'
-
 import dotenv from "dotenv"
 import { getActorFromName } from "./endpoints/searchActorsByName";
 
