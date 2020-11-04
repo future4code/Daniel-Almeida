@@ -21,14 +21,18 @@ import { inputData } from "../types/User";
 // }
 export const filterUser = async (data: inputData): Promise<any> => {
   try {
+    
+    const resultPerPage = 5
+    const offset:number = resultPerPage * (data.page - 1);
 
     
 
     const result = await connection.raw(`
-      SELECT * FROM aula48_exercicio
-      WHERE name LIKE "%${data.name}%"
-      WHERE type = "${data.type}"
-      ORDER BY ${data.orderBy} 
+    SELECT * from aula48_exercicio
+    WHERE name LIKE "%${data.name}%"
+    ORDER BY ${data.type} ${data.orderBy} 
+    LIMIT ${resultPerPage}
+    OFFSET ${offset}
     `)
 
     return result[0]

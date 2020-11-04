@@ -1,5 +1,6 @@
 export type inputData = {
    name: string,
    type: string,
-   orderBy: string
+   orderBy: string,
+   page: number
 }

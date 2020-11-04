@@ -36,9 +36,10 @@ export const searchUser = async (req: Request, res: Response) => {
   try {
 
     const data: inputData = {
-      name: req.query.name as string || "*",
-      type: req.query.type as string || "Teacher",
-      orderBy: req.query.oderBy as string || "DESC"
+      name: req.query.name as string,
+      type: req.query.type as string || "type",
+      orderBy: req.query.oderBy as string || "DESC",
+      page: Number(req.query.page) <= 0 ? 1 : Number(req.query.page) || 1
     }
     
 
