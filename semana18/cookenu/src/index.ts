@@ -4,7 +4,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import createUser from './endpoints/createUser'
 import getUserById from './endpoints/getUserById'
-
+import followUser from './endpoints/followUser';
 import createRecepi from './endpoints/createRecepi'
 import getRecipeById from './endpoints/getRecipeById'
 import login from './endpoints/login'
@@ -36,7 +36,7 @@ app.get("/", async function(req,res){
 app.post('/user/signup', createUser)
 app.post("/user/login", login)
 app.get('/user/:id', getUserById)
-
+app.post("/user/follow", followUser)
 
 app.get('/cep/:cep', getAddressByCep)
 
