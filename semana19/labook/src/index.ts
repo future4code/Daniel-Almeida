@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import { connection } from './data/connection'
+import { userRouter } from './routes/userRoutes'
 
 const app = express()
 app.use(express.json())
@@ -16,7 +17,7 @@ app.get("/", async function(req,res){
    }
 })
 
-
+app.use("/user", userRouter);
 
 app.listen(3003, () => {
    console.log('Servidor rodando na porta 3003')
