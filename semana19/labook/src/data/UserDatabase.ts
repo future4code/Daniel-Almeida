@@ -22,7 +22,7 @@ class UserDatabase extends BaseDatabase {
             
          }).into(UserDatabase.tableName)
       } catch (error) {
-         throw new Error("Erro de banco de dados: " + error.sqlMessage);
+         throw new Error(error.sqlMessage || error.message);
       }
    }
 
